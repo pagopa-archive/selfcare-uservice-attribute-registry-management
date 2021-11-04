@@ -1,0 +1,1 @@
+# selfcare-uservice-attribute-registry-management
