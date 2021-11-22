@@ -2,23 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: uservice-attribute-registry-management
-  name: uservice-attribute-registry-management
+    app: pdnd-interop-uservice-attribute-registry-management
+  name: pdnd-interop-uservice-attribute-registry-management
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: uservice-attribute-registry-management
+      app: pdnd-interop-uservice-attribute-registry-management
   template:
     metadata:
       labels:
-        app: uservice-attribute-registry-management
-        actorSystemName: uservice-attribute-registry-management
+        app: pdnd-interop-uservice-attribute-registry-management
+        actorSystemName: pdnd-interop-uservice-attribute-registry-management
     spec:
       imagePullSecrets:
         - name: regcred
       containers:
-        - name: uservice-attribute-registry-management
+        - name: pdnd-interop-uservice-attribute-registry-management
           image: {{ .Values.containerRegistry }}/{{ .Values.imageRepository }}
           command: ["bin/pdnd-interop-uservice-attribute-registry-management"]
           args: ["-Dconfig.override_with_env_vars=true"]
